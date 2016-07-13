@@ -4,15 +4,23 @@ import {
   View,
   TouchableHighlight,
   Text,
+  Image,
 } from 'react-native';
 
 var ContactScreen = require('./ContactScreen.ios');
+var AnimalScreen = require('./AnimalScreen.ios');
 
 var MainMenu = React.createClass({
   goContactScreen: function() {
     this.props.navigator.push({
       title: 'Contact',
       component: ContactScreen,
+    })
+  },
+  goAnimalScreen: function() {
+    this.props.navigator.push({
+      title: 'Animal',
+      component: AnimalScreen,
     })
   },
   render() {
@@ -23,7 +31,7 @@ var MainMenu = React.createClass({
             onPress={() => this.goDerper()}
             underlayColor='#bbbbbb'
           >
-            <Text style={styles.buttonText}>Zviera</Text>
+            <Image source={require('./img/menu/amazon.jpg')} />
           </TouchableHighlight>
 
         <TouchableHighlight
@@ -31,15 +39,15 @@ var MainMenu = React.createClass({
           onPress={() => this.goContactScreen()}
           underlayColor='#bbbbbb'
         >
-          <Text style={styles.buttonText}>Kontakt</Text>
+          <Image source={require('./img/menu/salamander.jpg')} />
         </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.button}
-          onPress={() => this.goDerper()}
+          onPress={() => this.goAnimalScreen()}
           underlayColor='#bbbbbb'
         >
-          <Text style={styles.buttonText}>Hugo</Text>
+          <Image source={require('./img/menu/climate.jpg')} />
         </TouchableHighlight>
 
       </View>
@@ -53,14 +61,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#5515f4',
     paddingTop: 20,
+    alignItems: 'center',
   },
   button: {
     backgroundColor: '#123456',
-    borderWidth: 5,
-  },
-  buttonText: {
-    fontSize: 22,
-    color: '#fff',
   },
 });
 

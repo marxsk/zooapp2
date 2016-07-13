@@ -10,7 +10,7 @@ var ContactScreen = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-        Zviera
+          Kontaktne informacie
         </Text>
       </View>
     );
