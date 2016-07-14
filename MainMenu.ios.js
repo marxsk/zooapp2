@@ -9,6 +9,7 @@ import {
 
 var ContactScreen = require('./ContactScreen.ios');
 var AnimalScreen = require('./AnimalScreen.ios');
+var AnimalListScreen = require('./AnimalListScreen.ios');
 
 var MainMenu = React.createClass({
   goContactScreen: function() {
@@ -23,12 +24,18 @@ var MainMenu = React.createClass({
       component: AnimalScreen,
     })
   },
+  goAnimalListScreen: function() {
+    this.props.navigator.push({
+      title: 'Animal List',
+      component: AnimalListScreen,
+    })
+  },
   render() {
     return (
       <View style={styles.container}>
           <TouchableHighlight
             style={styles.button}
-            onPress={() => this.goDerper()}
+            onPress={() => this.goAnimalListScreen()}
             underlayColor='#bbbbbb'
           >
             <Image source={require('./img/menu/amazon.jpg')} />
