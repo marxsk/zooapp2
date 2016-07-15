@@ -10,6 +10,7 @@ import {
 var ContactScreen = require('./ContactScreen.ios');
 var AnimalScreen = require('./AnimalScreen.ios');
 var AnimalListScreen = require('./AnimalListScreen.ios');
+var AnimalSwipe = require('./AnimalSwipe.ios');
 
 var MainMenu = React.createClass({
   goContactScreen: function() {
@@ -21,7 +22,7 @@ var MainMenu = React.createClass({
   goAnimalScreen: function() {
     this.props.navigator.push({
       title: 'Animal',
-      component: AnimalScreen,
+      component: AnimalSwipe,
     })
   },
   goAnimalListScreen: function() {
