@@ -11,13 +11,24 @@ var AnimalScreen = React.createClass({
   render() {
     return (
       <View style={styles.container}>
+        <View style={{
+          flex: 0,
+          flexDirection: 'row',
+          alignItems: 'stretch',
+          justifyContent: 'flex-start',
+        }}>
         <Image
           source={require('./img/animal/hippo.png')}
-          resizeMode='cover'
+          resizeMode='contain'
           style={{
-            height: 80,
+            height: 100,
+            width: 300,
           }}
         />
+        <View style={{
+          flex: 1,
+        }} />
+        </View>
         <ScrollView
           style={styles.scrollView}
         >
@@ -46,9 +57,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#5515f4',
-    paddingTop: 70,
-    alignItems: 'center',
+    backgroundColor: 'yellow',
+    padding: 0,
+    paddingTop: 64,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    borderWidth: 3,
+    borderColor: 'green',
   },
   text: {
     fontSize: 22,
@@ -57,6 +72,7 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: '#aaaabb',
     padding: 5,
+    borderWidth: 5,
   },
 });
 
