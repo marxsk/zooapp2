@@ -47,13 +47,16 @@ class SectionHeader extends Component {
 var AnimalListScreen = React.createClass({
   getInitialState() {
     let state = this.prepareSortedStructure([
-        {name: 'agama', link: 'link:agama'},
         {name: 'hyena', link: 'link:hyena'},
         {name: 'hospoda', link: 'link:hospoda'},
         {name: 'hroch', link: 'link:hroch'},
+        {name: 'agama', link: 'link:agama'},
         {name: 'antracit', link: 'link:antracit'},
         {name: 'choroš', link: 'link:choros'},
-      ]);
+        {name: 'drozd', link: 'link:drozd'},
+        {name: 'šimpanz', link: 'link:simpanz'},
+        {name: 'červík', link: 'link:cerv'},
+    ]);
 
     return state;
   },
@@ -65,13 +68,9 @@ var AnimalListScreen = React.createClass({
     for (let animal of animals) {
       let firstLetter = animal.name.charAt(0).toUpperCase();
 
-      // @todo: This code is not used because AlphabetList is not prepared for that
-      //  fix that later
-      /*
       if ((firstLetter === 'C') && (animal.name.charAt(1) === 'h')) {
         firstLetter = 'Ch';
       }
-      */
 
       if (!(firstLetter in state.data)) {
         state.data[firstLetter] = [];
