@@ -76,7 +76,13 @@ var swiper = React.createClass({
           </AnimalView>
         </View>
       </Swiper>
-    )};
+    )} else {
+      return(
+      <View style={styles.slide1}>
+        <Text>Text is missing</Text>
+      </View>
+      );
+    }
   }
 })
 
