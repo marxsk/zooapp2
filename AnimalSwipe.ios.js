@@ -5,6 +5,7 @@ import {
   Text,
   Image,
   ScrollView,
+  TabBarIOS,
 } from 'react-native';
 
 var Swiper = require('react-native-swiper');
@@ -42,9 +43,28 @@ var styles = StyleSheet.create({
 })
 
 var swiper = React.createClass({
+  getInitialState: function() {
+    return {
+      selectedTab: 'childTab',
+    };
+  },
+
   render: function() {
     if (this.props.link === 'link:agama') {
       return (
+        <TabBarIOS
+     unselectedTintColor="yellow"
+     tintColor="white"
+     barTintColor="darkslateblue">
+     <TabBarIOS.Item
+            title="Children"
+            selected={this.state.selectedTab === 'childTab'}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'childTab',
+              });
+            }}>
+
       <Swiper style={styles.wrapper} showsButtons={true} loop={false}>
         <View style={styles.slide1}>
           <AnimalView image='hippo-1'>
@@ -76,6 +96,49 @@ var swiper = React.createClass({
           </AnimalView>
         </View>
       </Swiper>
+      </TabBarIOS.Item>
+      <TabBarIOS.Item
+        title="Wikipedia"
+        selected={this.state.selectedTab === 'wikiTab'}
+        onPress={() => {
+          this.setState({
+            selectedTab: 'wikiTab',
+          });
+        }}>
+        <Text>No content yet</Text>
+      </TabBarIOS.Item>
+      <TabBarIOS.Item
+        title="Adult"
+        selected={this.state.selectedTab === 'adultTab'}
+        onPress={() => {
+          this.setState({
+            selectedTab: 'adultTab',
+          });
+        }}>
+        <Text>No content yet</Text>
+      </TabBarIOS.Item>
+      <TabBarIOS.Item
+        title="Susedia"
+        selected={this.state.selectedTab === 'neighTab'}
+        onPress={() => {
+          this.setState({
+            selectedTab: 'neighTab',
+          });
+        }}>
+        <Text>No content yet</Text>
+      </TabBarIOS.Item>
+      <TabBarIOS.Item
+        title="QR codes"
+        selected={this.state.selectedTab === 'qrTab'}
+        onPress={() => {
+          this.setState({
+            selectedTab: 'qrTab',
+          });
+        }}>
+        <Text>No content yet</Text>
+      </TabBarIOS.Item>
+
+    </TabBarIOS>
     )} else {
       return(
       <View style={styles.slide1}>
