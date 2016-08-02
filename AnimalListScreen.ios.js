@@ -3,23 +3,40 @@ import {
   StyleSheet,
   View,
   Text,
+  TouchableHighlight,
 } from 'react-native';
 
 var AlphabetListView = require('react-native-alphabetlistview');
+var AnimalSwipe = require('./AnimalSwipe.ios');
+var navigator = null;
 
 class Cell extends Component {
+  goAnimalScreen(linkAnimal) {
+    navigator.push({
+      title: 'Animal',
+      component: AnimalSwipe,
+      passProps: { link: linkAnimal},
+    });
+  };
+
   render() {
     return (
+      <TouchableHighlight
+        style={styles.buttonx}
+        onPress={() => this.goAnimalScreen(this.props.item.link)}
+        underlayColor='#bbbbbb'
+      >
       <View style={{height:30}}>
         <Text>{this.props.item.name}</Text>
       </View>
+      </TouchableHighlight>
     );
   }
 }
 class SectionItem extends Component {
   render() {
     return (
-      <Text style={{color:'#f00'}}>{this.props.title}</Text>
+        <Text style={{color:'#f00'}}>{this.props.title}</Text>
     );
   }
 }
@@ -46,6 +63,8 @@ class SectionHeader extends Component {
 
 var AnimalListScreen = React.createClass({
   getInitialState() {
+    navigator = this.props.navigator;
+
     let state = this.prepareSortedStructure([
         {name: 'hyena', link: 'link:hyena'},
         {name: 'hospoda', link: 'link:hospoda'},
@@ -114,6 +133,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: 'green',
   },
+  buttonx: {
+  }
 });
 
 module.exports = AnimalListScreen;

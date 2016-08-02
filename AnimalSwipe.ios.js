@@ -43,7 +43,8 @@ var styles = StyleSheet.create({
 
 var swiper = React.createClass({
   render: function() {
-    return (
+    if (this.props.link === 'link:agama') {
+      return (
       <Swiper style={styles.wrapper} showsButtons={true} loop={false}>
         <View style={styles.slide1}>
           <AnimalView image='hippo-1'>
@@ -75,7 +76,7 @@ var swiper = React.createClass({
           </AnimalView>
         </View>
       </Swiper>
-    )
+    )};
   }
 })
 

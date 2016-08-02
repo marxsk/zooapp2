@@ -33,6 +33,9 @@ var AnimalScreen = React.createClass({
           style={styles.scrollView}
         >
           <Text style={styles.text}>
+            {this.props.link}**
+          </Text>
+          <Text style={styles.text}>
           Ahoj děti!  Jsem bazilišek a chtěl bych vám povědět něco o svých kamarádech, se kterými tady v zoo bydlím. Jsou to agamy kočinčinské, jeden sameček agamák a dvě samičky. (Samečka poznáte podle toho, že je barevnější, má na hřbetě větší hřeben a má žlutooranžově zbarvený spodek krku. Jinak jsou všechny agamy svrchu zelené, trochu do hněda a mají světlá bříška.)
           </Text>
           <Text style={styles.text}>

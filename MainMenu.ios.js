@@ -19,10 +19,11 @@ var MainMenu = React.createClass({
       component: ContactScreen,
     })
   },
-  goAnimalScreen: function() {
+  goAnimalScreen: function(linkAnimal) {
     this.props.navigator.push({
       title: 'Animal',
       component: AnimalSwipe,
+      passProps: { link: linkAnimal},
     })
   },
   goAnimalListScreen: function() {
@@ -52,7 +53,7 @@ var MainMenu = React.createClass({
 
         <TouchableHighlight
           style={styles.button}
-          onPress={() => this.goAnimalScreen()}
+          onPress={() => this.goAnimalScreen('link:agama')}
           underlayColor='#bbbbbb'
         >
           <Image source={require('./img/menu/climate.jpg')} />
