@@ -13,6 +13,16 @@ const styles = require('./styles.ios');
 
 var AnimalDetail = React.createClass({
   render() {
+    if (this.props.type === 'swiper') {
+      return this.render_swiper();
+    } else if (this.props.type === 'scroll') {
+      return this.render_scroll();
+    } else {
+      return (<View />);
+    }
+  },
+
+  render_scroll() {
     return(
       <View style={styles.container}>
         <View style={{
@@ -54,8 +64,9 @@ var AnimalDetail = React.createClass({
         </ScrollView>
       </View>
     );
-  }
-/*  render() {
+  },
+
+  render_swiper() {
     return(
     <Swiper style={styles.wrapper} showsButtons={true} loop={false}>
       <View style={styles.slide1}>
@@ -90,7 +101,6 @@ var AnimalDetail = React.createClass({
     </Swiper>
   );
   }
-*/
 });
 
 module.exports = AnimalDetail;

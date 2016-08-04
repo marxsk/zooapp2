@@ -65,7 +65,7 @@ var swiper = React.createClass({
                 selectedTab: 'childTab',
               });
             }}>
-        <AnimalDetail />
+        <AnimalDetail type='scroll'/>
       </TabBarIOS.Item>
       <TabBarIOS.Item
         title="Wikipedia"

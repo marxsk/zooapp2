@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 
 var ContactScreen = require('./ContactScreen.ios');
-var AnimalScreen = require('./AnimalScreen.ios');
 var AnimalListScreen = require('./AnimalListScreen.ios');
 var AnimalSwipe = require('./AnimalSwipe.ios');
 
