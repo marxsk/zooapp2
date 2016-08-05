@@ -9,6 +9,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#5515f4',
     paddingTop: 70,
   },
+  vcontainer: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#5515f4',
+    paddingTop: 24,
+  },
   text: {
     fontSize: 16,
     color: '#fff',

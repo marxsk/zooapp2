@@ -51,8 +51,7 @@ var swiper = React.createClass({
   },
 
   render: function() {
-    if (this.props.link === 'link:agama') {
-      return (
+    return (
         <TabBarIOS
      unselectedTintColor="yellow"
      tintColor="white"
@@ -65,7 +64,7 @@ var swiper = React.createClass({
                 selectedTab: 'childTab',
               });
             }}>
-        <AnimalDetail type='scroll'/>
+        <AnimalDetail type='scrollFlow' link={this.props.link}/>
       </TabBarIOS.Item>
       <TabBarIOS.Item
         title="Wikipedia"
@@ -109,13 +108,7 @@ var swiper = React.createClass({
       </TabBarIOS.Item>
 
     </TabBarIOS>
-    )} else {
-      return(
-      <View style={styles.slide1}>
-        <Text>Text is missing</Text>
-      </View>
-      );
-    }
+    )
   }
 })
 
