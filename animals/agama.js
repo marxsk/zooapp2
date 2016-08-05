@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 var Swiper = require('react-native-swiper');
-var AnimalView = require('./AnimalView.ios');
-const styles = require('./styles.ios');
+var AnimalView = require('../AnimalView.ios');
+const styles = require('../styles.ios');
 
 var AnimalDetail = React.createClass({
   render() {
@@ -34,7 +34,7 @@ var AnimalDetail = React.createClass({
       Ahoj děti!  Jsem bazilišek a chtěl bych vám povědět něco o svých kamarádech, se kterými tady v zoo bydlím. Jsou to agamy kočinčinské, jeden sameček agamák a dvě samičky. (Samečka poznáte podle toho, že je barevnější, má na hřbetě větší hřeben a má žlutooranžově zbarvený spodek krku. Jinak jsou všechny agamy svrchu zelené, trochu do hněda a mají světlá bříška.)
       </Text>
       <Image
-        source={require('./img/animal/hippo.png')}
+        source={require('./../img/animal/hippo.png')}
         resizeMode='contain'
         style={{
           height: 100,
@@ -48,7 +48,7 @@ var AnimalDetail = React.createClass({
       Pokud si teď říkáte, že vás na agamách už nic nepřekvapí, jste na omylu: agamy mají tři oči! Dvě normální, těch jste si určitě všimly, a mezi nimi mají takový puntík, kterým vnímají jen světlo. A to tak dobře, že se dokážou probudit, když nad nimi letí dravec, který by je mohl chtít sníst. Agamy samotné se krmí hlavně hmyzem. Občas si pošmáknou i na nějaké rybce nebo myšce. Zato zelenina jim moc nevoní.
       </Text>
       <Image
-        source={require('./img/animal/hippo.png')}
+        source={require('./../img/animal/hippo.png')}
         resizeMode='contain'
         style={{
           height: 100,
@@ -76,7 +76,7 @@ var AnimalDetail = React.createClass({
           justifyContent: 'flex-start',
         }}>
         <Image
-          source={require('./img/animal/hippo.png')}
+          source={require('./../img/animal/hippo.png')}
           resizeMode='contain'
           style={{
             height: 100,

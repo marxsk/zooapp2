@@ -10,7 +10,6 @@ import {
 
 var Swiper = require('react-native-swiper');
 var AnimalView = require('./AnimalView.ios');
-var AnimalDetail = require('./AnimalDetail.ios');
 
 var styles = StyleSheet.create({
   wrapper: {
@@ -51,6 +50,12 @@ var swiper = React.createClass({
   },
 
   render: function() {
+    var AnimalDetail = null;
+
+    if (this.props.link === 'link:agama') {
+      AnimalDetail = require('./animals/agama');
+    }
+
     return (
         <TabBarIOS
      unselectedTintColor="yellow"
