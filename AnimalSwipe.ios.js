@@ -54,6 +54,10 @@ var swiper = React.createClass({
 
     if (this.props.link === 'link:agama') {
       AnimalDetail = require('./animals/agama');
+    } else if (this.props.link === 'link:medvedKamcatsky') {
+      AnimalDetail = require('./animals/medvedKamcatsky');
+    } else if (this.props.link === 'link:tygrSumatersky') {
+      AnimalDetail = require('./animals/tygrSumatersky');
     }
 
     return (

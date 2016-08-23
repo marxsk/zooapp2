@@ -76,6 +76,8 @@ var AnimalListScreen = React.createClass({
         {name: 'drozd', link: 'link:drozd'},
         {name: 'šimpanz', link: 'link:simpanz'},
         {name: 'červík', link: 'link:cerv'},
+        {name: 'medvěd kamčatský', link: 'link:medvedKamcatsky'},
+        {name: 'tygr sumaterský', link: 'link:tygrSumatersky'},
     ]);
 
     return state;
